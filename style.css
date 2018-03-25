@@ -1,0 +1,8 @@
+#buttons {
+    border: solid 1px;
+    height: 20px;
+}
+
+#gifs div {
+    display: inline;
+}
