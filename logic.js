@@ -37,15 +37,21 @@ function renderButtons() {
         .then(function(response) {
             var results = response.data;
             $.each(results, function(i, result) {
-                var p = $("<div>").text("Rating: " + result.rating);
-                var animalImage = $("<img class='gif'>");
+                var animalImage = $("<img class='card-img-top gif'>");
                 animalImage.attr("src", result.images.fixed_height_still.url);
                 animalImage.attr("data-still", result.images.fixed_height_still.url);
                 animalImage.attr("data-animate", result.images.fixed_height.url);
-                $(p).append(animalImage);
-                $("#gifs").append(p);
+               
+                var p = $("<p class='card-text'>").text("Rating: " + result.rating);
+                var card = $("<div class='card'>");
+                var cardBody = $("<div class='card-body'>");
+                $(cardBody).append(p)
+                $(card).append(animalImage);
+                $(card).append(cardBody);
                 
-            })
+                $("#gifs").append(card);
+                                
+            });
 
             $(".gif").click(function() {
                 var state = $(this).attr("data-state");

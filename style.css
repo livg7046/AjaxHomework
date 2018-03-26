@@ -3,6 +3,19 @@
     height: 20px;
 }
 
-#gifs div {
-    display: inline;
+#gifs .card {
+    display: inline-block;
+    width: 200px;
+    margin: 5px;
+}
+
+.btn-info {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+    margin: 5px;
+}
+
+p {
+    font-weight: bold;
+    font-family: 'Titillium Web', sans-serif;
 }
